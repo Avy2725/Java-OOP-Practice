@@ -1,7 +1,7 @@
 public class carKo {
   // fields, properties and attributes
   private String brand;
-  private int CGeer;
+  private int CGear;
   private int speed;
 
 
@@ -9,7 +9,7 @@ public class carKo {
   public carKo (String brand,int CGeer, int speed) 
   {// this = assgigns it to the paramiter ex bathrooms to bathrooms
     this.brand = brand;
-    this.CGeer = CGeer;
+    this.CGear = CGear;
     this.speed = speed;
   }
 
@@ -21,7 +21,25 @@ public class carKo {
 
   public void brake() {
     speed = 0;
-    System.out.println("the car stopped");
+    System.out.println("The car stopped");
+  }
+
+  public void reverse() {
+    if (CGear == -1) {
+      System.out.println("The Car is in reverse");
+    } else {
+      System.out.println("Switch to reverse gear");
+    }
+  }
+
+  public String getBrand() {
+    return brand;
+  }
+  public int getCGear() {
+    return CGear;
+  }
+  public int getSeed() {
+    return speed;
   }
 
   public static void main(String[] args) {
@@ -33,7 +51,11 @@ public class carKo {
     //  Modularity
     //  Polymorphism, and inheritance
 
-
+    carKo car1 = new carKo("Nissan", 1, 1);
+    car1.accelerate();
+    System.out.println("The brand of car1 is " + car1.getBrand());
+    System.out.println("The CGear of car1 is " + car1.getCGear());
+    System.out.println("The speed of car1 is " + car1.getSeed());
   }
 }
 
