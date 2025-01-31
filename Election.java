@@ -14,18 +14,21 @@ public class Election {
 
     int totalVoters;
 
-    System.out.println("How Many Will Vote? (1 - 10)");
-    try {
-        totalVoters = Integer.parseInt(in.nextLine());
-        if (totalVoters < 1 || totalVoters > 10) {
-            throw new IllegalArgumentException("Number of voters must be between 1 - 10.");
-        }
-    } catch (IllegalArgumentException e) {
-        System.out.println(e.getMessage() + " Is invalid Please enter 1 - 10");
-        return;
-    }
-
-
+    while(true) {
+      System.out.println("Please enter the number of registered voters (1-10):");
+      try {
+          totalVoters = Integer.parseInt(in.nextLine());
+          if (totalVoters < 1 || totalVoters > 10) {
+              System.out.println("Error: Only numbers between 1 and 10 are allowed.");
+          } else {
+              break;
+          }
+      } catch (NumberFormatException e) {
+          System.out.println("Error: Please enter a valid integer.");
+          continue;
+      }
+  }
+  
     System.out.println("------------------------------------");
 
     System.out.println("Welcome to the Candidate Voting System");
