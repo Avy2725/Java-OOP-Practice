@@ -1,6 +1,11 @@
 public class carKo {
 
   // class var, shared by all objects
+  // it can be local var, instance var, class var
+  // (local) is var that is used within a mathod
+  // (instance) is var within a class but outside any method
+  // (class) is var that is within class that has "static" key word
+
   public static int numberOfWheels = 4;
   // fields, properties and attributes that may deffer per class
   private String brand;
