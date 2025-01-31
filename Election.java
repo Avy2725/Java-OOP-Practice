@@ -21,7 +21,7 @@ public class Election {
             throw new IllegalArgumentException("Number of voters must be between 1 - 10.");
         }
     } catch (IllegalArgumentException e) {
-        System.out.println(e.getMessage());
+        System.out.println(e.getMessage() + " Is invalid Please enter 1 - 10");
         return;
     }
 
