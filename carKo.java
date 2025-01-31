@@ -1,5 +1,8 @@
 public class carKo {
-  // fields, properties and attributes
+
+  // class var, shared by all objects
+  public static int numberOfWheels = 4;
+  // fields, properties and attributes that may deffer per class
   private String brand;
   private int CGear;
   private int speed;
@@ -13,6 +16,7 @@ public class carKo {
     this.speed = speed;
   }
 
+  // in carKo the methods below are instance methods that can be used by objects within the class
   // global funcations/methods that can be used by any new Object, house1 & house2
   public void accelerate() {
     speed+=10;
@@ -58,6 +62,8 @@ public class carKo {
     System.out.println("The speed of car1 is " + car1.getSeed());
     car1.brake();
     System.out.println("The speed of car1 is " + car1.getSeed());
+
+    System.out.println("Number of Wheels " + carKo.numberOfWheels);
   }
 }
 
