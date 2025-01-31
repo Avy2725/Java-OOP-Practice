@@ -6,7 +6,7 @@ public class carKo {
 
 
   // constructor
-  public carKo (String brand,int CGeer, int speed) 
+  public carKo (String brand,int CGear, int speed) 
   {// this = assgigns it to the paramiter ex bathrooms to bathrooms
     this.brand = brand;
     this.CGear = CGear;
@@ -55,6 +55,8 @@ public class carKo {
     car1.accelerate();
     System.out.println("The brand of car1 is " + car1.getBrand());
     System.out.println("The CGear of car1 is " + car1.getCGear());
+    System.out.println("The speed of car1 is " + car1.getSeed());
+    car1.brake();
     System.out.println("The speed of car1 is " + car1.getSeed());
   }
 }
