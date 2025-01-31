@@ -14,7 +14,15 @@ public class carKo {
   }
 
   // global funcations/methods that can be used by any new Object, house1 & house2
+  public void accelerate() {
+    speed+=10;
+    System.out.println("The car accelerates to " + speed + "km/h");
+  }
 
+  public void brake() {
+    speed = 0;
+    System.out.println("the car stopped");
+  }
 
   public static void main(String[] args) {
     //  objects are anything that is real
