@@ -14,6 +14,7 @@ public class carKo {
 
 
   // constructor
+  // constructor = is a method where you place all the initalization, if the properties of the created object
   public carKo (String brand,int CGear, int speed) 
   {// this = assgigns it to the paramiter ex bathrooms to bathrooms
     this.brand = brand;
@@ -69,6 +70,13 @@ public class carKo {
     System.out.println("The speed of car1 is " + car1.getSeed());
 
     System.out.println("Number of Wheels " + carKo.numberOfWheels);
+
+    // calling a class from a another file (now you can use it within this file)
+    houseKo house3 = new houseKo(3,5,"black");
+
+    System.out.println(house3.getBedrooms()); 
+    System.out.println(house3.getBathroom()); 
+    System.out.println(house3.getColor()); 
   }
 }
 

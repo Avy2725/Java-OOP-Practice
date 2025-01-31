@@ -5,6 +5,7 @@ public class houseKo {
   private String color;
 
   // constructor
+  // constructor = is a method where you place all the initalization, if the properties of the created object
   public houseKo (int bedrooms, int bathrooms, String color) 
   {// this = assgigns it to the paramiter ex bathrooms to bathrooms
     this.bathrooms = bathrooms;
