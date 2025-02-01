@@ -4,83 +4,105 @@ public class Election {
 
   static Scanner in = new Scanner(System.in);
 
-  public static void main(String[] args) {
+  public int crrVoter = 1;
 
-    Candidate candi1 = new Candidate("Avy Cabanting", 0);
-    Candidate candi2 = new Candidate("Lexie Real", 0);
-    Candidate candi3 = new Candidate("Imman Lingad", 0);
-    Candidate candi4 = new Candidate("Austin Reyes", 0);
-    Candidate candi5 = new Candidate("Jared Maqkenzy", 0);
+  public Candidate candi1 = new Candidate("Avy Cabanting", 0);
+  public Candidate candi2 = new Candidate("Lexie Real", 0);
+  public Candidate candi3 = new Candidate("Imman Lingad", 0);
+  public Candidate candi4 = new Candidate("Austin Reyes", 0);
+  public Candidate candi5 = new Candidate("Jared Maqkenzy", 0);
 
-    int totalVoters;
+  public Candidate[] candidatesRos = {candi1, candi2, candi3, candi4, candi5};
 
+  public void displayCandi() {
+    System.out.println(candidatesRos.length);
+		System.out.println("These are your Candidates:\n");
+		for (int i = 0; i < candidatesRos.length; i++) {
+			System.out.println(candidatesRos[i].getName());
+		}
+		System.out.println();
+	}
+
+  public int getVoters() {
     while(true) {
       System.out.println("Please enter the number of registered voters (1-10):");
       try {
-          totalVoters = Integer.parseInt(in.nextLine());
+          int totalVoters = Integer.parseInt(in.nextLine());
           if (totalVoters < 1 || totalVoters > 10) {
               System.out.println("Error: Only numbers between 1 and 10 are allowed.");
           } else {
-              break;
+              return totalVoters;
           }
       } catch (NumberFormatException e) {
           System.out.println("Error: Please enter a valid integer.");
           continue;
       }
   }
+	}
+
+  public void vote(int totalVoters) {
+		System.out.println("Enter the name of the candidate you want to vote for");
+		while (crrVoter <= totalVoters) {
+			System.out.println("Who Will you vote for Voter Number: " + crrVoter);
+			String candidate = in.nextLine();
+			candidateIsValid(candidate);
+		}
+	}
+
+  public void candidateIsValid(String candiName) {
+
+		boolean candidateFound = false;
+    for (int i = 0; i < candidatesRos.length; i++) {
+      String candidate = candidatesRos[i].getName();
+			if (candiName.toLowerCase().equals(candidate.toLowerCase().trim())) {
+				candidatesRos[i].addVote();
+				candidateFound = true;
+				crrVoter++;
+			}
+    }
+		if (candidateFound == false) {
+			System.out.println("Candidate not found");
+		}
+	}
   
-    System.out.println("------------------------------------");
-
-    System.out.println("Welcome to the Candidate Voting System");
-    System.out.println("Cadidates are: Avy Cabanting, Lexie Real, Imman Lingad, Austin Reyes, Jared Maqkenzy");
-
-
-for (int votes = 1; votes <= totalVoters;) {
-  System.out.println("------------------------------------");
-  System.out.println("Who Will you vote for Voter Number: " + votes);
-  String voteWho = in.nextLine().toLowerCase().trim();
-
-  switch (voteWho) {
-      case "avy cabanting":
-      candi1.addVote();
-      votes++;
-          break;
-      case "lexie real":   
-      candi2.addVote();
-      votes++;
-          break;
-      case "imman lingad":   
-      candi3.addVote(); 
-      votes++;
-          break;
-      case "austin reyes":   
-      candi4.addVote(); 
-      votes++;
-          break;
-      case "jared maqkenzy":
-      candi5.addVote();
-      votes++;
-          break;
-      default:
-      System.out.println("Candidate Does Not Exist or Invalid Vote");
-  }
-}
-    System.out.println("------------------------------------");
-    System.out.println("Voting Has Stopped");
-    System.out.println("The Candidate | " + candi1.getName() + "\t | Got " + candi1.getVotes() + " Total Votes");
-    System.out.println("The Candidate | " + candi2.getName() + "\t | Got " + candi2.getVotes() + " Total Votes");
-    System.out.println("The Candidate | " + candi3.getName() + "\t | Got " + candi3.getVotes() + " Total Votes");
-    System.out.println("The Candidate | " + candi4.getName() + "\t | Got " + candi4.getVotes() + " Total Votes");
-    System.out.println("The Candidate | " + candi5.getName() + "\t | Got " + candi5.getVotes() + " Total Votes");
-
-    Candidate[] candidates = {candi1, candi2, candi3, candi4, candi5};
-    Candidate winner = candidates[0];
-    for (int i = 0; i < candidates.length; i++) {
-      if (winner.getVotes() < candidates[i].getVotes()) {
-        winner = candidates[i];
+  public Candidate topCandi() {
+    Candidate win = candidatesRos[0];
+    for (int i = 0; i < candidatesRos.length; i++) {
+      if (win.getVotes() < candidatesRos[i].getVotes()) {
+        win = candidatesRos[i];
       }
     }
-    System.out.println("The Winner is " + winner.getName());
+
+    for (int i = 0; i < candidatesRos.length; i++) {
+      if (win.getVotes() == candidatesRos[i].getVotes() && win.getName() != candidatesRos[i].getName()) {
+        return null;
+      }
+    }
+
+		return win;
+	}
+
+  public void display(Candidate winner){
+    for (int i = 0; i < candidatesRos.length; i++) {
+      System.out.println(candidatesRos[i].getName() + ":\t" + candidatesRos[i].getVotes() + " Total Votes");
+    }
+    System.out.println("------------------------------------");
+		if (winner == null) {
+			System.out.println("There is a draw");
+		} else {
+			System.out.println("Overall Winner: " + winner.getName());
+			System.out.println("Congratulations " + winner.getName() + "!");
+		}
+	}
+	
+
+  public static void main(String[] args) {
+    Election elec = new Election();
+    elec.displayCandi();
+    int totalVoters = elec.getVoters();
+    elec.vote(totalVoters);
+    Candidate win = elec.topCandi();
+    elec.display(win);
   }  
 
 }
