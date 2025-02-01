@@ -41,7 +41,7 @@ public class Election {
 	}
 
   public void vote(int totalVoters) {
-		System.out.println("Enter the name of the candidate you want to vote for");
+    System.out.println("Welcome to the Candidate Voting System");
 		while (crrVoter <= totalVoters) {
 			System.out.println("Who Will you vote for Voter Number: " + crrVoter);
 			String candidate = in.nextLine();
