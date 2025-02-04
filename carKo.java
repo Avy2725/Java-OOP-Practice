@@ -14,7 +14,7 @@ public class carKo {
 
 
   // constructor
-  // constructor = is a method where you place all the initalization, if the properties of the created object
+  // constructor = is a method where you place all the initalization, the properties of the created object
   public carKo (String brand,int CGear, int speed) 
   {// this = assgigns it to the paramiter ex bathrooms to bathrooms
     this.brand = brand;
