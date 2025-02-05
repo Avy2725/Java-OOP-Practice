@@ -6,7 +6,7 @@ public class Election {
 
   public int crrVoter = 1;
 
-  public Candidate candi1 = new Candidate("Avy Cabanting", 0); 
+  public Candidate candi1 = new Candidate("Avy Cabanting", 0);
   public Candidate candi2 = new Candidate("Lexie Real", 0);
   public Candidate candi3 = new Candidate("Imman Lingad", 0);
   public Candidate candi4 = new Candidate("Austin Reyes", 0);
@@ -15,7 +15,6 @@ public class Election {
   public Candidate[] candidatesRos = {candi1, candi2, candi3, candi4, candi5};
 
   public void displayCandi() {
-    System.out.println(candidatesRos.length);
 		System.out.println("These are your Candidates:\n");
 		for (int i = 0; i < candidatesRos.length; i++) {
 			System.out.println(candidatesRos[i].getName());
@@ -25,11 +24,11 @@ public class Election {
 
   public int getVoters() {
     while(true) {
-      System.out.println("Please enter the number of registered voters (1-10):");
+      System.out.println("Please enter the number of registered voters");
       try {
           int totalVoters = Integer.parseInt(in.nextLine());
-          if (totalVoters < 1 || totalVoters > 10) {
-              System.out.println("Error: Only numbers between 1 and 10 are allowed.");
+          if (totalVoters < 1) {
+              System.out.println("Error: Only numbers above 1 is allowed.");
           } else {
               return totalVoters;
           }
