@@ -6,7 +6,7 @@ public class Election {
 
   public int crrVoter = 1;
 
-  public Candidate candi1 = new Candidate("Avy Cabanting", 0);
+  public Candidate candi1 = new Candidate("Avy Cabanting", 0); 
   public Candidate candi2 = new Candidate("Lexie Real", 0);
   public Candidate candi3 = new Candidate("Imman Lingad", 0);
   public Candidate candi4 = new Candidate("Austin Reyes", 0);

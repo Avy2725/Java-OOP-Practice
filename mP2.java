@@ -1,0 +1,160 @@
+import java.util.Scanner;
+
+public class mP2 {
+
+  static Scanner scanner = new Scanner(System.in);
+
+  private int getNoStudents() {
+    while(true) {
+      System.out.println("Enter the number of students:");
+      try {
+        int numberOfStudents = Integer.parseInt(scanner.nextLine());
+          if (numberOfStudents < 1) {
+              System.out.println("Error: Please enter a valid integer.");
+          } else {
+            return numberOfStudents;
+          }
+      } catch (NumberFormatException e) {
+          System.out.println("Error: Please enter a valid integer.");
+      }
+  }
+}
+
+private void getStuData(int numberOfStudents) {
+  for (int i = 0; i < numberOfStudents; i++) {
+    System.out.println("Enter student " + (i + 1) + ":");
+    
+    System.out.print("Name: ");
+
+    String name = scanner.nextLine();
+    
+    int[] scores = new int[4];
+    for (int j = 0; j < 4; j++) {
+        switch (j) {
+            case 0:
+            System.out.println("Enter scores in Human Computer Interaction:");
+                break;
+            case 1:
+            System.out.println("Enter scores in Object Oriented Programming:");
+                break;
+            case 2:
+            System.out.println("Enter scores in Computer Fundamentals:");
+                break;
+            case 3:
+            System.out.println("Enter scores in Discrete Structure:");
+                break;
+        }
+
+        
+
+        while (!scanner.hasNextInt()) {
+          System.out.println("Invalid input. Please enter a valid integer.");          
+          try {
+            scores[j] = Integer.parseInt(scanner.nextLine());  
+          } catch (NumberFormatException e) {
+              System.out.println("Error: Please enter a valid integer.");
+          }
+        }
+
+        scores[j] = Integer.parseInt(scanner.nextLine());    
+
+        if (scores[j] < 0 || scores[j] > 100) {
+            System.out.println("Score must be between 0 and 100. Invalid score: " + scores[j]);
+            j--;
+        }
+    }
+    
+    double average = calculateAverage(scores);
+    char grade = determineGrade(average);
+    
+    displayStudent(name, average, grade);
+}
+}
+
+
+    private double calculateAverage(int[] scores) {
+        int sum = 0;
+        for (int score : scores) {
+            sum += score;
+        }
+        return (double) sum / 4;
+    }
+    
+    private char determineGrade(double average) {
+        if (average >= 90) {
+            return 'A';
+        } else if (average >= 80) {
+            return 'B';
+        } else if (average >= 70) {
+            return 'C';
+        } else if (average >= 60) {
+            return 'D';
+        } else {
+            return 'F';
+        }
+    }
+    
+    private void displayStudent(String name, double average, char grade) {
+        System.out.println("\n" + name);
+        System.out.println("Average: " + String.format("%.2f", average));
+        System.out.println("Grade: " + grade);
+        System.out.println("--------------------");
+    }
+
+    public static void main(String[] args) {
+      mP2 gr = new mP2();
+      int numberOfStudents = gr.getNoStudents();
+      gr.getStuData(numberOfStudents);
+        scanner.close();
+    }
+}
+/*
+
+1. Input:
+
+   - Your program should ask for the number of students.
+
+   - For each student, input the following information:
+
+     - Name (a string)
+
+     - Scores in Human Computer Interaction, Object Oriented Programming, Computer Fundamentals, Discrete Structure. (integers between 0 and 100)
+Output
+
+
+   - Calculate the average score for each student.
+
+   - Determine the grade based on the average score:
+
+     - 90-100: A
+
+     - 80-89: B
+
+     - 70-79: C
+
+     - 60-69: D
+
+     - Below 60: F
+
+   - Display each student's name, average score, and grade.
+
+-
+
+   - Create a method to calculate the average score.
+
+   - Create a method to determine the grade based on the average score.
+
+   - Create a method to display the student's name, average score, and grade.
+
+   1. Input:
+
+   - Your program should ask for the number of students.
+
+   - For each student, input the following information:
+
+     - Name (a string)
+
+     - Scores in Human Computer Interaction, Object Oriented Programming, Computer Fundamentals, Discrete Structure. (integers between 0 and 100)
+
+
+ */
