@@ -44,5 +44,8 @@ newWords[1] = "Cool";
 
 // Output will be "Cool"
 System.out.println(newWords[1]);
+
+// Enumeration
+// Annotations 
   }
 }
