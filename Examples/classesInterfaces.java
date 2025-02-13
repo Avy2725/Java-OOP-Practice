@@ -76,7 +76,7 @@ public class classesInterfaces {
     Schedule schedule = obj.new Schedule();
     System.out.println("Working hours on Monday: " + schedule.getWorkingHours(Day.MONDAY));
     System.out.println("Working hours on Saturday: " + schedule.getWorkingHours(Day.SATURDAY));
-    System.out.println("Working hours on Invalid day: " + schedule.getWorkingHours(null));
+    
 
   }
 }
