@@ -61,42 +61,41 @@ public class loopsArrays {
     // While(true) loop iteration: 1
     // While(true) loop iteration: 2
     // While(true) loop iteration: 4
-  }
+    // Example of jagged arrays
 
-  // Example of jagged arrays
-  public static void jaggedArrayExample() {
+
     int[][] jaggedArray = {
       {1, 2, 3},
       {4, 5},
       {6, 7, 8, 9}
     };
-
-    for (int i = 0; i < jaggedArray.length; i++) {
-      for (int j = 0; j < jaggedArray[i].length; j++) {
-        System.out.print(jaggedArray[i][j] + " ");
+    
+    for (int x = 0; x < jaggedArray.length; x++) {
+      for (int y = 0; y < jaggedArray[x].length; y++) { // needs to be like this due to diff lengths per row
+        System.out.print(jaggedArray[x][y] + " ");
       }
       System.out.println();
     }
-  }
+    System.out.println(jaggedArray.length + " LENGTH(Y)");
+    // LENGTH STARTS WITH 1, INDEX STARTS WITH 0
+    //   1 2 3    // 3 LENGTH(x)
+    //   4 5      // 2 LENGTH(x)
+    //   6 7 8 9  // 4 LENGTH(x)
 
-//   1 2 3 
-//   4 5 
-//   6 7 8 9 
-
-// Example of changing values within an array
-public static void changeArrayValuesExample() {
-  int[] array = {10, 20, 30, 40, 50};
+    // Example of changing values within an array
+    int[] array = {10, 20, 30, 40, 50};
   
-  // Change the value at index 2
-  array[2] = 99;
+    // Change the value at index 2
+    array[2] = 99;
   
-  // Print the modified array
-  for (int i = 0; i < array.length; i++) {
-    System.out.print(array[i] + " ");
-  }
-  System.out.println();
-}
+    // Print the modified array
+    for (int o = 0; o < array.length; o++) {
+      System.out.print(array[o] + " ");
+    }
+    System.out.println();
 
-// Example output:
-// 10 20 99 40 50
+
+    // Example output:
+    // 10 20 99 40 50
+  }
 }
