@@ -21,7 +21,7 @@ public class loopsArrays {
 
     // Example of for-each loop
     int[] numbers = {1, 2, 3, 4, 5};
-    for (int number : numbers) {
+    for (int number : numbers) {// number is the variable that holds the value of the current element, numbers is the array
       System.out.println("For-each loop iteration: " + number);
     }
 
