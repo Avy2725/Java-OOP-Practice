@@ -82,4 +82,21 @@ public class loopsArrays {
 //   1 2 3 
 //   4 5 
 //   6 7 8 9 
+
+// Example of changing values within an array
+public static void changeArrayValuesExample() {
+  int[] array = {10, 20, 30, 40, 50};
+  
+  // Change the value at index 2
+  array[2] = 99;
+  
+  // Print the modified array
+  for (int i = 0; i < array.length; i++) {
+    System.out.print(array[i] + " ");
+  }
+  System.out.println();
+}
+
+// Example output:
+// 10 20 99 40 50
 }
