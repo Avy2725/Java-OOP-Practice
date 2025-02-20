@@ -97,5 +97,27 @@ public class loopsArrays {
 
     // Example output:
     // 10 20 99 40 50
+
+    System.out.println(" -------------------------------");
+    // Example of flipping an array
+    int[] originalArray = {1, 2, 3, 4, 5};
+    int[] flippedArray = new int[originalArray.length];
+
+    for (int p = 0; p < originalArray.length; p++) {
+      flippedArray[p] = originalArray[originalArray.length - 1 - p];
+      System.out.println(flippedArray[p] + " ");
+    }
+
+
+    // Example output: NAG FLIP NA SIYA dulo and start
+    // 5 4 3 2 1
+    System.out.println(" -------------------------------");
+    int[] myArrays = {10, 20, 30, 40, 50};
+    int temp = myArrays[0];
+    myArrays[0] = myArrays[myArrays.length - 1];
+    myArrays[myArrays.length - 1] = temp;
+    for (int num : myArrays) {
+      System.out.println(num + " ");
+    }
   }
 }
