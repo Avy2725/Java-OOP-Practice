@@ -62,4 +62,24 @@ public class loopsArrays {
     // While(true) loop iteration: 2
     // While(true) loop iteration: 4
   }
+
+  // Example of jagged arrays
+  public static void jaggedArrayExample() {
+    int[][] jaggedArray = {
+      {1, 2, 3},
+      {4, 5},
+      {6, 7, 8, 9}
+    };
+
+    for (int i = 0; i < jaggedArray.length; i++) {
+      for (int j = 0; j < jaggedArray[i].length; j++) {
+        System.out.print(jaggedArray[i][j] + " ");
+      }
+      System.out.println();
+    }
+  }
+
+//   1 2 3 
+//   4 5 
+//   6 7 8 9 
 }
