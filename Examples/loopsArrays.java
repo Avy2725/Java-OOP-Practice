@@ -25,18 +25,41 @@ public class loopsArrays {
       System.out.println("For-each loop iteration: " + number);
     }
 
+    // Example of break and continue in a for loop
+    for (int m = 0; m < 10; m++) {
+      if (m == 2) {
+        continue; // Skip the rest of the loop when m is 2
+      }
+      if (m == 7) {
+        break; // Exit the loop when m is 7
+      }
+      System.out.println("For loop iteration with break and continue: " + m);
+    }
+    // Example output:
+    // For loop iteration with break and continue: 0
+    // For loop iteration with break and continue: 1
+    // For loop iteration with break and continue: 3
+    // For loop iteration with break and continue: 4
+    // For loop iteration with break and continue: 5
+    // For loop iteration with break and continue: 6
+
     // Example of while(true) loop with continue and break
     int l = 0;
     while (true) {
       if (l == 3) {
-      l++;
-      continue; // Skip the rest of the loop when l is 3
+        l++;
+        continue; // Skip the rest of the loop when l is 3
       }
       if (l >= 5) {
-      break; // Exit the loop when l is 5 or more
+        break; // Exit the loop when l is 5 or more
       }
       System.out.println("While(true) loop iteration: " + l);
       l++;
     }
+    // Example output:
+    // While(true) loop iteration: 0
+    // While(true) loop iteration: 1
+    // While(true) loop iteration: 2
+    // While(true) loop iteration: 4
   }
 }
