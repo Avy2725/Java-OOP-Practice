@@ -81,7 +81,7 @@ public class loopsArrays {
     //   1 2 3    // 3 LENGTH(x)
     //   4 5      // 2 LENGTH(x)
     //   6 7 8 9  // 4 LENGTH(x)
-
+    System.out.println(jaggedArray[2][1]);
     // Example of changing values within an array
     int[] array = {10, 20, 30, 40, 50};
   
