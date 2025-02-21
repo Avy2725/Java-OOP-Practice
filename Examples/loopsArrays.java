@@ -99,6 +99,7 @@ public class loopsArrays {
     // 10 20 99 40 50
 
     System.out.println(" -------------------------------");
+    
     // Example of flipping an array
     int[] originalArray = {1, 2, 3, 4, 5};
     int[] flippedArray = new int[originalArray.length];
@@ -119,5 +120,21 @@ public class loopsArrays {
     for (int num : myArrays) {
       System.out.println(num + " ");
     }
+
+    // Example of copying an array using System.arraycopy method
+    int[] sourceArray = {1, 2, 3, 4, 5};
+    int[] destinationArray = new int[sourceArray.length];
+
+    // Copying elements from sourceArray to destinationArray
+    System.arraycopy(sourceArray, 0, destinationArray, 0, sourceArray.length);
+
+    // Print the copied array
+    for (int q = 0; q < destinationArray.length; q++) {
+      System.out.print(destinationArray[q] + " ");
+    }
+    System.out.println();
+
+    // Example output:
+    // 1 2 3 4 5
   }
 }
