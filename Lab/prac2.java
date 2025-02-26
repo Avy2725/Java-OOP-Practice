@@ -1,7 +1,7 @@
 public class prac2 {
   public static void main(String[] args) {
     if (args.length != 3) {
-      System.out.println("Please provide 4 numbers as command line arguments.");
+      System.out.println("Please provide 3 Strings as command line arguments.");
       return;
     }
 
