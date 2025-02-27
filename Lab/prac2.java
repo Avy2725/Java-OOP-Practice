@@ -11,7 +11,7 @@ public class prac2 {
       b = args[1];
       c = args[2];
     } catch (NumberFormatException e) {
-      System.out.println("Invalid number format. Please provide valid integers.");
+      System.out.println("Invalid format. Please provide valid Strings.");
       return;
     }
 
