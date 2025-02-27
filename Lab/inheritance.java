@@ -8,7 +8,13 @@ class Animal {
 
 // Derived class
 class Dog extends Animal {
-  // Method in the derived class
+
+  @Override
+  public void eat() {
+    System.out.println("The dog eats dog food.");
+  }
+
+  // Method in the derived class you can also add variables
   public void bark() {
     System.out.println("The dog barks.");
   }
@@ -16,11 +22,17 @@ class Dog extends Animal {
 
 // Another derived class
 class Cat extends Animal {
+  @Override
+  public void eat() {
+    System.out.println("The dog eats dog food.");
+  }
+
   // Method in the derived class
   public void meow() {
     System.out.println("The cat meows.");
   }
 }
+
 
 public class inheritance {
   public static void main(String[] args) {
