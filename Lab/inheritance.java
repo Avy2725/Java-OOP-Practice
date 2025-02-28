@@ -1,6 +1,11 @@
-// Base class
+// Superclass
 class Animal {
-  // Method in the base class
+  // Constructor of the superclass
+  public Animal() {
+    System.out.println("An animal is created.");
+  }
+
+  // Method in the superclass
   public void eat() {
     System.out.println("This animal eats food.");
   }
@@ -8,13 +13,19 @@ class Animal {
 
 // Derived class
 class Dog extends Animal {
+  // Constructor of the derived class
+  public Dog() {
+    // Call the constructor of the superclass
+    super();
+    System.out.println("A dog is created.");
+  }
 
   @Override
   public void eat() {
     System.out.println("The dog eats dog food.");
   }
 
-  // Method in the derived class you can also add variables
+  // Method in the derived class
   public void bark() {
     System.out.println("The dog barks.");
   }
@@ -22,14 +33,36 @@ class Dog extends Animal {
 
 // Another derived class
 class Cat extends Animal {
+  // Constructor of the derived class
+  public Cat() {
+    // Call the constructor of the superclass
+    super();
+    System.out.println("A cat is created.");
+  }
+
   @Override
   public void eat() {
-    System.out.println("The dog eats dog food.");
+    System.out.println("The cat eats cat food.");
   }
 
   // Method in the derived class
   public void meow() {
     System.out.println("The cat meows.");
+  }
+}
+
+// Chain inheritance example
+class Puppy extends Dog {
+  // Constructor of the derived class
+  public Puppy() {
+    // Call the constructor of the superclass
+    super();
+    System.out.println("A puppy is created.");
+  }
+
+  // Method in the derived class
+  public void weep() {
+    System.out.println("The puppy weeps.");
   }
 }
 
