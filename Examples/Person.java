@@ -40,7 +40,5 @@ public class Person {
   public static void main(String[] args) {
     Person person = new Person("John Doe", 25);
     person.displayPersonInfo();
-
-    person.displayPersonInfo();
   }
 }
