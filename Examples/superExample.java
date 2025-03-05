@@ -1,4 +1,4 @@
-public class superExample extends employee {
+public class superExample extends Employeee {
     public String department;
     public superExample(String name, double salary, String department) {
         super(name, salary);
