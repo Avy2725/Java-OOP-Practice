@@ -10,7 +10,7 @@ public class TestStudent {
     float totalCollection = 0.0F;
 
     for (int i = 0; i < students.length; i++) {
-      System.out.println(students[i].toString(i) + "\n");
+      System.out.println(students[i].toString(i + 1) + "\n");
     }
 
     // compute total Collection value

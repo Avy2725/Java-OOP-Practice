@@ -16,7 +16,8 @@ class Student {
     }
 
     public String toString(int i) {
-        return "Student # "+ i+ ": " + name + "is taking up " + course + "with a tuition fee of " + tuitionFee;
+        studentNumber = i;
+        return "Student # "+ studentNumber+ ": " + name + "is taking up " + course + " with a tuition fee of " + tuitionFee;
     }
   }  
   
