@@ -1,0 +1,5 @@
+101,Lebron James,85
+102,Kevin Durant,92
+103,Nikola Jocic,45
+104,Luka Doncic,900
+105,Jayson Tatum,78
