@@ -1,11 +1,13 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class simpleCal {
   private Frame f;
   private Label l1, l2, l3;
   private TextField tf1, tf2, tr;
   private Button bAdd, bSub, bMul, bDiv, bClear;
-
 
   public simpleCal() {
     f = new Frame("Simple Calculator");
@@ -14,11 +16,10 @@ public class simpleCal {
     l2 = new Label("Second: ");
     l3 = new Label("Result: ");
 
-    tf1 = new TextField("0.0",10);
-    tf2 = new TextField("0.0",10);
+    tf1 = new TextField("0.0", 10);
+    tf2 = new TextField("0.0", 10);
     tr = new TextField("0.0", 10);
-
-
+    tr.setEditable(false);
 
     bAdd = new Button("+");
     bSub = new Button("-");
@@ -33,6 +34,40 @@ public class simpleCal {
     bDiv.setPreferredSize(btnSize);
     bClear.setPreferredSize(btnSize);
 
+    bAdd.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        calculate('+');
+      }
+    });
+
+    bSub.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        calculate('-');
+      }
+    });
+
+    bMul.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        calculate('*');
+      }
+    });
+
+    bDiv.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        calculate('/');
+      }
+    });
+
+    bClear.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        clearFields();
+      }
+    });
 
     f.addWindowListener(new java.awt.event.WindowAdapter() {
       @Override
@@ -40,6 +75,43 @@ public class simpleCal {
         System.exit(0);
       }
     });
+  }
+
+  private void calculate(char operator) {
+    try {
+      double num1 = Double.parseDouble(tf1.getText());
+      double num2 = Double.parseDouble(tf2.getText());
+      double result = 0;
+
+      switch (operator) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          if (num2 != 0) {
+            result = num1 / num2;
+          } else {
+            tr.setText("Error");
+            return;
+          }
+          break;
+      }
+      tr.setText(String.valueOf(result));
+    } catch (NumberFormatException ex) {
+      tr.setText("Error");
+    }
+  }
+
+  private void clearFields() {
+    tf1.setText("0.0");
+    tf2.setText("0.0");
+    tr.setText("0.0");
   }
 
   public void startApp() {
@@ -75,8 +147,11 @@ public class simpleCal {
     f.setVisible(true);
   }
 
+  
+
   public static void main(String[] args) {
     simpleCal gui = new simpleCal();
     gui.startApp();
   }
 }
+
